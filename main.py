@@ -22,21 +22,7 @@ class Lists:
     
 #Functions
 class Functions:
-    def forString(countOfLetters, inList):
-        count = 0
-        while count < int(countOfLetters):
-            rand = random.randint(0, len(inList) - 1)
-            ourMainList.append(inList[rand])
-            count += 1
-        
-    def forNum(countOfNumbers, inList):
-        count = 0
-        while count < int(countOfNumbers):
-            rand = random.randint(0, len(inList) - 1)
-            ourMainList.append(inList[rand])
-            count += 1
-        
-    def forSymbol(countOfSymbols, inList):
+    def forPassword(countOfSymbols, inList):
         count = 0
         while count < int(countOfSymbols):
             rand = random.randint(0, len(inList) - 1)
@@ -44,9 +30,9 @@ class Functions:
             count += 1
             
     def mainFunction(mainList):
-        Functions.forString(letter, Lists.letters_list)
-        Functions.forNum(num, Lists.numbers_list)
-        Functions.forSymbol(symb, Lists.symbols_list)
+        Functions.forPassword(letter, Lists.letters_list)
+        Functions.forPassword(num, Lists.numbers_list)
+        Functions.forPassword(symb, Lists.symbols_list)
         
         random.shuffle(mainList)
         randomPassword = ''.join(mainList)
@@ -78,7 +64,6 @@ while run:
     except ValueError:
         print("Try again :(")
         time.sleep(1)
-
 
 #NEPOUŽÍVAT class na zbytečné věci viz Structure
     
