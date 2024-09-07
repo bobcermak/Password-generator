@@ -64,6 +64,5 @@ while run:
     except ValueError:
         print("Try again :(")
         time.sleep(1)
-
+        
 #NEPOUŽÍVAT class na zbytečné věci viz Structure
-    
