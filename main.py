@@ -2,41 +2,41 @@ import random
 import time
 
 #Lists
-class Lists:
-    letters_list = [
+letters_list = [
     "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
     "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
     "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
     "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
     ]
 
-    numbers_list = [
+numbers_list = [
         "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
     ]
 
-    symbols_list = [
+symbols_list = [
         "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-",
         ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^",
         "_", "`", "{", "|", "}", "~"
     ]
     
+    
 #Functions
-class Functions:
-    def forPassword(countOfSymbols, inList):
+def forPassword(countOfSymbols, inList):
         count = 0
         while count < int(countOfSymbols):
             rand = random.randint(0, len(inList) - 1)
             ourMainList.append(inList[rand])
             count += 1
             
-    def mainFunction(mainList):
-        Functions.forPassword(letter, Lists.letters_list)
-        Functions.forPassword(num, Lists.numbers_list)
-        Functions.forPassword(symb, Lists.symbols_list)
+def mainFunction(mainList):
+        forPassword(letter, letters_list)
+        forPassword(num, numbers_list)
+        forPassword(symb, symbols_list)
         
         random.shuffle(mainList)
         randomPassword = ''.join(mainList)
         return randomPassword
+    
 
 #Structure
 
@@ -50,7 +50,7 @@ while run:
         num = input("Number of numbers: ")
         symb = input("Number of symbols: ")
         time.sleep(1)
-        print(f"Your password is: {Functions.mainFunction(ourMainList)}")
+        print(f"Your password is: {mainFunction(ourMainList)}")
         ourMainList.clear()
         ask = input("Do you wanna generate again?(y/n): ").lower()
         if ask == "y":
@@ -65,4 +65,4 @@ while run:
         print("Try again :(")
         time.sleep(1)
         
-#NEPOUŽÍVAT class na zbytečné věci viz Structure
+#NEPOUŽÍVAT class na zbytečné věci viz Structure -> objekty
